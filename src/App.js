@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import AceEditor from "react-ace";
+
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/theme-github";
+
+function onChange(newValue) {
+  console.log("change", newValue);
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AceEditor
+      mode="javascript"
+      theme="github"
+      onChange={onChange}
+      name="UNIQUE_ID_OF_DIV"
+      editorProps={{ $blockScrolling: true }}
+    />
   );
 }
 
