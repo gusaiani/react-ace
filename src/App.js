@@ -4,8 +4,12 @@ import { Container } from "./App.styled";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
 
-function onChange(newValue) {
+function handleChange(newValue) {
   console.log("change", newValue);
+}
+
+function handleCursorChange(e) {
+  console.log("cursor change", e);
 }
 
 function App() {
@@ -14,14 +18,14 @@ function App() {
       <AceEditor
         mode="javascript"
         theme="monokai"
-        onChange={onChange}
+        onChange={handleChange}
+        onCursorChange={handleCursorChange}
         name="UNIQUE_ID_OF_DIV"
         editorProps={{ $blockScrolling: true }}
         fontSize={18}
         setOptions={{
-          enableBasicAutocomplete: true,
           minLines: 1,
-          maxLines: 4,
+          maxLines: 14,
           showLineNumbers: false
         }}
         showGutter={false}
