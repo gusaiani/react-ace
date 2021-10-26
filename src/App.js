@@ -32,6 +32,7 @@ function App() {
         style={{
           width: 1000
         }}
+        wrapEnabled={true}
       />
     </Container>
   );
